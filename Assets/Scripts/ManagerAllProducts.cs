@@ -43,6 +43,7 @@ public class ManagerAllProducts : MonoBehaviour
     private void Cooke(int i)
     {
         ProductType product = (ProductType)i;
+        TimeManager.instance.countProducts++;
         Instantiate(productsPrefabs[product], SpawnProduct.position, Quaternion.identity);
     }
 }

@@ -98,7 +98,12 @@ public class NPC : MonoBehaviour
             speed * Time.deltaTime
         );
 
-        if (Vector3.Distance(transform.position, targetTable.position) < 0.1f) isGoingToTable = false;
+
+        if (Vector3.Distance(transform.position, targetTable.position) < 0.1f) 
+        {
+            TimeManager.instance.AddClient(this);
+            isGoingToTable = false;
+        }
     }
 
     public void GoToTable(Transform table)
